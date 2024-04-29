@@ -157,8 +157,8 @@ export default class Subscription {
 				yield video;
 			}
 
-			// Stop searching if we have looked through videosToSearch
-			if (videosSearched++ >= settings.floatplane.videosToSearch) break;
+			// Stop searching if we have looked through videosToSearch, but never stop processing if videosToSearch is -1
+			if (settings.floatplane.videosToSearch !== -1 && videosSearched++ >= settings.floatplane.videosToSearch) break;
 		}
 	}
 

@@ -37,9 +37,9 @@ export const videosToSearch = async (initial: number): Promise<number> =>
 		await prompts({
 			type: "number",
 			name: "videosToSearch",
-			message: "How many videos back from the latest do you want to search through for ones to download?",
+			message: "How many videos back from the latest do you want to search through for ones to download?  Providing -1 will download the entire catalog.",
 			initial,
-			min: 0,
+			min: -1,
 		})
 	).videosToSearch || initial;
 
